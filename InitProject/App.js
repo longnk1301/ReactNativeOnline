@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import type {Node} from 'react';
 import {
   SafeAreaView,
@@ -54,6 +54,25 @@ const Section = ({children, title}): Node => {
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
+  //var, let, const
+  //var: de gan gia tri scope la global variable
+  //let: de gan gia tri va scope la local variable
+  //const: khong the gan lai
+
+  //setTimeout: Hàm setTimeout() trong JavaScript được sử dụng để thực thi một hàm hoặc đoạn mã được chỉ định chỉ một lần sau một khoảng thời gian nhất định
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     alert('Hello');
+  //   }, 5000);
+  // }, []);
+
+  //setInterval:
+  // useEffect(() => {
+  //   const date = new Date();
+  //   setInterval(() => {
+  //     alert('Hello xx', date.getTime().toString());
+  //   }, 5000);
+  // }, []);
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
