@@ -75,6 +75,7 @@ const Section = ({children, title, data, setData, text, setText}): Node => {
 const App: () => Node = () => {
   const [data, setData] = useState(1);
   const [data1, setData1] = useState('Hello');
+  const [json, setJson] = useState('json none');
   //state: la quan ly du lieu
 
   //tao 1 state text la 'Hello' hien thi o Section 2. Va co 1 button, khi click button doi text thanh Hello world.
@@ -104,6 +105,17 @@ const App: () => Node = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  //hooks: useEffect, useState,
+  // useMemo, useCallback
+  //useContext, useReduce,
+
+  //useEffect:
+  //khi nao dung: khi minh muon THUC HIEN MOT ACTION NAO DO khi lan dau component duoc render
+
+  useEffect(() => {
+    setJson('JSON HAS DATA');
+  }, []);
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -115,6 +127,7 @@ const App: () => Node = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
+          <Text>{json}</Text>
           <Section title="Step 1" data={data} setData={setData}>
             Edit <Text style={styles.highlight}>App.js</Text> to change this
             screen and then come back to see your edits.
